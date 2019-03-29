@@ -72,6 +72,16 @@ namespace EncapsulationUsingwinforms
         {
 
         }
+
+        private void btnDeposit_Click(object sender, EventArgs e)
+        {
+            objAccount.Deposit(Convert.ToInt32(txtAmount.Text));
+        }
+
+        private void btnWithdraw_Click(object sender, EventArgs e)
+        {
+            objAccount.Withdraw(Convert.ToInt32(txtAmount.Text));
+        }
     }
 
     
