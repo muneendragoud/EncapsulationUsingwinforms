@@ -8,7 +8,24 @@ namespace EncapsulationUsingwinforms
 {
     public class Account
     {
-        public int Id;
+        private int _Id;
+        public int Id
+        {
+            get
+            {
+                return _Id;
+            }
+            set
+            {
+                if(_Id>=0)
+                _Id = value;
+                else
+                {
+                    System.Windows.Forms.MessageBox.Show("Invalid Input");
+                }
+            }
+        }
+
         public string Name;
         public decimal Balance;
 
