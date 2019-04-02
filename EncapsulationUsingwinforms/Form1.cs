@@ -36,8 +36,10 @@ namespace EncapsulationUsingwinforms
         private void btnSet_Click(object sender, EventArgs e)
         {
             objAccount.Id = Convert.ToInt32(txtId.Text);
-         objAccount.Name = txtName.Text;
+         objAccount.Name = txtName.Text="muni";
         objAccount.Balance =Convert.ToDecimal(txtBalance.Text);
+            objAccount = new Account(objAccount.Id,objAccount.Name,objAccount.Balance);
+          
             MessageBox.Show("Set the values in Account object");
         }
 
