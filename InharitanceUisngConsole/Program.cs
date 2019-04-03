@@ -9,42 +9,50 @@ namespace InharitanceUisngConsole
 
     public class Parent
     {
-        private int priA { get; set;}
-        public int pubA { get; set;}
+        private int priA;
+        public int pubA;
+        protected int proA;
 
         public Parent()
         {
 
         }
-        public Parent(int pria,int puba)
+        public Parent(int a,int b,int c)
         {
-            this.priA = pria;
-            this.pubA = puba;
+            this.priA = a;
+            this.pubA = b;
+            this.proA=c;
         }
     }
     public class cChild:Parent
     {
-        private int priB { get; set;}
-        protected int proA { get; set;}
-
+        public int pubB;
         public cChild()
         {
 
         }
-        public cChild(int prib,int proa,int puba)
+        public cChild(int a,int b,int c,int d)
+            :base(a,b,c)
         {
-            this.priB = prib;
-            this.pubA = puba;
-            this.proA = proa;
+            this.pubB = d;
         }
+
+        public void GetAll()
+        {
+            proA = 10;
+            pubB = 80;
+            pubA = 45;
+        }
+
     }
 
    public class InharitanceConcept
     {
         static void Main(string[] args)
         {
-            Parent c = new cChild();
-           
+            cChild c = new cChild();
+            c.GetAll();
+            Console.ReadLine();
         }
     }
 }
